@@ -15,4 +15,4 @@ for qoute in qoutes:
     print(content[0].text, end=" - ")
     # print(aouthor)
     # print("\n")
-    print(content[1].text)
+    print(content[1].text.replace("(about)", ""))
