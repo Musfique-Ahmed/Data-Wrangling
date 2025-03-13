@@ -15,6 +15,7 @@ for quote in quotes:
     demo = quote.find_all('span')
     quotes_list.append(demo[0].get_text()[1:-1])
     author_list.append(demo[1].small.get_text())
+    # link = 
 
 df = pd.DataFrame({'Quote' : quotes_list, 'Author' : author_list})
 
