@@ -20,6 +20,3 @@ for quote in quotes:
 df = pd.DataFrame({'Quote' : quotes_list, 'Author' : author_list})
 
 df.to_csv('Quotes.csv', index=False)
-
-
-    
