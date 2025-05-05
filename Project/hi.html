@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hate Speech Recognition Survey</title>
+  <base target="_top">
+  <link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons1.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f3f4f6;
+      color: #1f2937;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Card Container */
+    .container {
+      width: 95vw;
+      max-width: 900px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      margin: 20px auto;
+    }
+    .container:hover { transform: translateY(-5px); }
+
+    /* Header */
+    .header {
+      padding: 28px;
+      background: linear-gradient(135deg, #ef4444, #f97316);
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    /* Body */
+    .body {
+      padding: 32px 24px;
+    }
+    .description {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+    .section {
+      background: #f9fafb;
+      border-left: 8px solid #3b82f6;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+    .section h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+    .section p {
+      font-size: 1rem;
+      color: #4b5563;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .section ul {
+      list-style: disc inside;
+      color: #4b5563;
+      margin-left: 8px;
+    }
+    .section h2 {
+      font-size: 1.375rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+    .section p {
+      font-size: 1rem;
+      color: #4b5563;
+      margin-bottom: 12px;
+    }
+    .section ul {
+      list-style: disc inside;
+      color: #4b5563;
+      margin-left: 8px;
+    }
+
+    /* Button */
+    .form-wrapper { text-align: center; margin-bottom: 32px; }
+    .btn-create {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 60px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      background: linear-gradient(90deg, #ef4444, #f97316);
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(249,115,22,0.4);
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .btn-create:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(249,115,22,0.5);
+    }
+
+    /* Output */
+    #output { text-align: center; padding: 0 20px 32px; }
+    .result-card {
+      display: inline-block;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      padding: 20px 28px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .result-card p {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+    .result-link {
+      display: inline-block;
+      background: #f97316;
+      color: #ffffff;
+      padding: 16px 36px;
+      border-radius: 24px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .result-link:hover {
+      transform: translateY(-2px);
+      background: #dc6803;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #6b7280;
+      padding: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Hate Speech Recognition Survey</h1>
+    </div>
+    <div class="body">
+      <p class="description">
+        Welcome to the Hate Speech Recognition Survey! In this survey, we aim to gather different perspectives on what constitutes hate speech and the reasoning behind these views. You’ll be presented with 5 statements. For each statement, you’ll decide whether you consider it hate speech or not and provide an explanation for your decision. Your insights will help improve understanding in this important area.
+      </p>
+
+      <div class="section">
+        <h2>Key Features</h2>
+        <ul>
+          <li>Each participant will receive 5 personalized questions.</li>
+          <li>Questions will be shuffled automatically to ensure uniqueness.</li>
+          <li>You will get a personalized survey link upon clicking the "Generate Survey Form" button.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Instructions</h2>
+        <ul>
+          <li>Click the "Generate Survey Form" button to get your personalized survey.</li>
+          <li>Wait a few seconds for the survey link to appear.</li>
+          <li>Click the survey link to open your form.</li>
+          <li>Answer 5 questions: For each, decide if it’s hate speech or not.</li>
+          <li>If you think it is hate speech, explain why.</li>
+          <li>Submit your responses.</li>
+        </ul>
+      </div>
+
+      <div class="form-wrapper">
+        <form id="testForm" onsubmit="handleFormSubmit(event)">
+          <button type="submit" class="btn-create">Generate Survey Form</button>
+        </form>
+      </div>
+
+      <div id="output"></div>
+    </div>
+    <div class="footer">Powered by Google Apps Script © 2025</div>
+  </div>
+
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      google.script.run
+        .withSuccessHandler(showLink)
+        .withFailureHandler(showError)
+        .lookForm();
+    }
+
+    function showLink(url) {
+      const container = document.getElementById('output');
+      container.innerHTML = '';
+      const card = document.createElement('div');
+      card.className = 'result-card';
+      const text = document.createElement('p');
+      text.textContent = 'Your Survey form is ready!';
+      const link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.className = 'result-link';
+      link.textContent = 'Go to Survey Form';
+      link.onclick = () => window.top.close();
+      card.append(text, link);
+      container.appendChild(card);
+    }
+
+    function showError(error) {
+      console.error(error);
+      document.getElementById('output').innerHTML = '<p style="color:#dc2626;font-weight:700;font-size:1.125rem;">Error generating survey form. Try again.</p>';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "products": [
+        {
+            "name": "Wireless Headphones",
+            "category": "Electronics",
+            "price": 120.99,
+            "rating": 4.5
+        },
+        {
+            "name": "Smartphone",
+            "category": "Electronics",
+            "price": 799.99,
+            "rating": 4.7
+        }
+    ]
+
+}
