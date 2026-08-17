@@ -1,0 +1,5 @@
+2026-08-17T07:45:12Z model=Gemma 3 4B Instruct row=0 status=ok latency=100.670s pt=108 ct=76 gpu_power=35.0W vram=1828MiB err=''
+2026-08-17T07:46:50Z model=Gemma 3 4B Instruct row=1 status=ok latency=97.611s pt=111 ct=38 gpu_power=57.4W vram=1828MiB err=''
+2026-08-17T07:48:28Z model=Gemma 3 4B Instruct row=2 status=ok latency=97.558s pt=101 ct=37 gpu_power=46.6W vram=1826MiB err=''
+2026-08-17T07:50:19Z model=Gemma 3 4B Instruct row=3 status=ok latency=98.511s pt=104 ct=34 gpu_power=17.9W vram=1828MiB err=''
+2026-08-17T07:51:56Z model=Gemma 3 4B Instruct row=4 status=ok latency=97.299s pt=119 ct=57 gpu_power=47.1W vram=1828MiB err=''

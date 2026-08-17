@@ -1,0 +1,46 @@
+{
+  "model": "Llama 3.2 3B Instruct",
+  "ollama_tag": "llama3.2:3b",
+  "display_name": "Llama 3.2 3B Instruct",
+  "parameters_b": 3.2,
+  "experiment": "original",
+  "dataset_path": "data/data_130.csv",
+  "n_rows_total": 312,
+  "n_attempted": 3,
+  "successful_samples": 1,
+  "failed_samples": 2,
+  "invalid_predictions": 2,
+  "total_prompt_tokens": 359,
+  "total_completion_tokens": 60,
+  "total_tokens": 419,
+  "latency": {
+    "n": 3,
+    "total_runtime_seconds": 30.27984600001946,
+    "average_latency_s": 10.040783433340644,
+    "median_latency_s": 6.513733600004343,
+    "p95_latency_s": 16.078186239994828,
+    "min_latency_s": 6.4677135000238195,
+    "max_latency_s": 17.140903199993772,
+    "total_tokens": 419,
+    "tokens_per_second": 13.83758688864305,
+    "samples_per_minute": 5.944548066720165
+  },
+  "gpu": {
+    "peak_vram_mib": 4253
+  },
+  "energy": {
+    "estimated_energy_Wh": 0.6693855622227096,
+    "power_source": "fallback"
+  },
+  "co2": {
+    "estimated_co2_g": 0.31795814205578704,
+    "carbon_intensity_gCO2_per_kWh": 475,
+    "carbon_intensity_source": "IEA 2023 global average (configurable)"
+  },
+  "carbon_intensity_gCO2_per_kWh": 475,
+  "carbon_intensity_source": "IEA 2023 global average (configurable)",
+  "power_source": "fallback",
+  "api_cloud_co2_reference_only_g": 6.59e-05,
+  "started_at": "2026-08-17T07:52:41Z",
+  "finished_at": "2026-08-17T07:53:12Z"
+}

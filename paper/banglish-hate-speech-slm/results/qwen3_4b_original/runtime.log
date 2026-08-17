@@ -1,0 +1,3 @@
+2026-08-17T07:54:45Z model=Qwen3-4B row=0 status=ok latency=69.811s pt=109 ct=1100 gpu_power=78.2W vram=1826MiB err=''
+2026-08-17T07:55:57Z model=Qwen3-4B row=1 status=invalid_label latency=71.971s pt=114 ct=1561 gpu_power=144.9W vram=1826MiB err=''
+2026-08-17T07:57:13Z model=Qwen3-4B row=2 status=ok latency=76.520s pt=106 ct=2012 gpu_power=144.9W vram=1823MiB err=''

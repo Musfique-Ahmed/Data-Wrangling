@@ -1,0 +1,46 @@
+{
+  "model": "Gemma 3 4B Instruct",
+  "ollama_tag": "gemma3:4b",
+  "display_name": "Gemma 3 4B Instruct",
+  "parameters_b": 4.0,
+  "experiment": "original",
+  "dataset_path": "data/data_130.csv",
+  "n_rows_total": 312,
+  "n_attempted": 0,
+  "successful_samples": 0,
+  "failed_samples": 0,
+  "invalid_predictions": 0,
+  "total_prompt_tokens": 0,
+  "total_completion_tokens": 0,
+  "total_tokens": 0,
+  "latency": {
+    "n": 0,
+    "total_runtime_seconds": 0.00018350000027567148,
+    "average_latency_s": 0.0,
+    "median_latency_s": 0.0,
+    "p95_latency_s": 0.0,
+    "min_latency_s": 0.0,
+    "max_latency_s": 0.0,
+    "total_tokens": 0,
+    "tokens_per_second": 0.0,
+    "samples_per_minute": 0.0
+  },
+  "gpu": {
+    "peak_vram_mib": 1826
+  },
+  "energy": {
+    "estimated_energy_Wh": 0.0,
+    "power_source": "unavailable"
+  },
+  "co2": {
+    "estimated_co2_g": 0.0,
+    "carbon_intensity_gCO2_per_kWh": 475,
+    "carbon_intensity_source": "IEA 2023 global average (configurable)"
+  },
+  "carbon_intensity_gCO2_per_kWh": 475,
+  "carbon_intensity_source": "IEA 2023 global average (configurable)",
+  "power_source": "unavailable",
+  "api_cloud_co2_reference_only_g": 0.0,
+  "started_at": "2026-08-17T07:52:13Z",
+  "finished_at": "2026-08-17T07:52:13Z"
+}

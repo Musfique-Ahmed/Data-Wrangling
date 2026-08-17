@@ -1,0 +1,46 @@
+{
+  "model": "Qwen3-1.7B",
+  "ollama_tag": "qwen3:1.7b",
+  "display_name": "Qwen3-1.7B",
+  "parameters_b": 1.7,
+  "experiment": "original",
+  "dataset_path": "data/data_130.csv",
+  "n_rows_total": 312,
+  "n_attempted": 5,
+  "successful_samples": 5,
+  "failed_samples": 0,
+  "invalid_predictions": 0,
+  "total_prompt_tokens": 632,
+  "total_completion_tokens": 2655,
+  "total_tokens": 3287,
+  "latency": {
+    "n": 5,
+    "total_runtime_seconds": 17.53984610000043,
+    "average_latency_s": 3.452155820012558,
+    "median_latency_s": 3.477715700020781,
+    "p95_latency_s": 3.9343040800013114,
+    "min_latency_s": 2.862368800007971,
+    "max_latency_s": 3.9700302999990527,
+    "total_tokens": 3287,
+    "tokens_per_second": 187.40187235735888,
+    "samples_per_minute": 17.103912901493054
+  },
+  "gpu": {
+    "peak_vram_mib": 1824
+  },
+  "energy": {
+    "estimated_energy_Wh": 0.38357286889028425,
+    "power_source": "fallback"
+  },
+  "co2": {
+    "estimated_co2_g": 0.182197112722885,
+    "carbon_intensity_gCO2_per_kWh": 475,
+    "carbon_intensity_source": "IEA 2023 global average (configurable)"
+  },
+  "carbon_intensity_gCO2_per_kWh": 475,
+  "carbon_intensity_source": "IEA 2023 global average (configurable)",
+  "power_source": "fallback",
+  "api_cloud_co2_reference_only_g": 0.0013907,
+  "started_at": "2026-08-17T07:40:42Z",
+  "finished_at": "2026-08-17T07:41:00Z"
+}

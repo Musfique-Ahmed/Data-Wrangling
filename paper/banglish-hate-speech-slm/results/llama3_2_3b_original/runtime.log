@@ -1,0 +1,3 @@
+2026-08-17T07:52:59Z model=Llama 3.2 3B Instruct row=0 status=invalid_label latency=17.141s pt=119 ct=15 gpu_power=13.3W vram=4255MiB err=''
+2026-08-17T07:53:05Z model=Llama 3.2 3B Instruct row=1 status=ok latency=6.514s pt=124 ct=30 gpu_power=20.9W vram=4255MiB err=''
+2026-08-17T07:53:12Z model=Llama 3.2 3B Instruct row=2 status=invalid_label latency=6.468s pt=116 ct=15 gpu_power=26.6W vram=4255MiB err=''
