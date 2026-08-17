@@ -15,6 +15,17 @@ from typing import Any
 
 @dataclass
 class GpuSample:
+    """One GPU sampling window.
+
+    `avg_power_w` is mean board power in W (nvidia-smi `power.draw`).
+    `peak_vram_mib` is max `memory.used` in MiB observed during the window.
+    `duration_s` is the wall-clock window length (used for energy calc).
+    `util_pct_avg` is mean SM utilisation % (informational only).
+
+    These are *coarse*: by default only 2 samples are taken per inference
+    call (start + stop). Bursts shorter than `poll_interval_s` may be missed.
+    See METRICS.md §3–§4 for limitations.
+    """
     avg_power_w: float | None
     peak_vram_mib: int | None
     duration_s: float

@@ -247,6 +247,10 @@ def run(options: RunOptions) -> RunSummary:
 
     avg_power = None
     peak_vram = None
+    # Coarse run-level energy: use sum-of-latencies as a proxy for GPU-active
+    # time. Per-request power samples are logged in runtime.log but not
+    # aggregated here; the fallback power config is used as a safe default.
+    # See METRICS.md §4 and §5 for details.
     total_gpu_s = sum(latencies)
     post = sample_now()
     if post:

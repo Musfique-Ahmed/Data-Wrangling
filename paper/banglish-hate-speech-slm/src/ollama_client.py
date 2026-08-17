@@ -22,6 +22,15 @@ import requests
 
 @dataclass
 class ChatResponse:
+    """Result of one `/api/chat` request.
+
+    Token counts come from Ollama itself (exact, not estimated from a
+    tokenizer). `thinking` holds the hidden chain-of-thought block for
+    Qwen3 models when `think=true`; empty for other models. `total_duration_ns`
+    is the model's reported wall time inside Ollama; the Python-side
+    latency is captured separately by `inference.run` via `time.perf_counter`.
+    See METRICS.md §1–§2 for details.
+    """
     content: str
     prompt_tokens: int
     completion_tokens: int

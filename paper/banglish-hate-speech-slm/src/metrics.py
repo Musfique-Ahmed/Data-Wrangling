@@ -22,7 +22,21 @@ def percentile(values: list[float], pct: float) -> float:
 
 def summary(latencies_s: Iterable[float], total_tokens: int,
             total_runtime_s: float) -> dict:
-    """Return the standard latency / throughput summary block."""
+    """Return the standard latency / throughput summary block.
+
+    Fields:
+      n                       — number of successfully-attempted requests
+      total_runtime_seconds   — wall-clock run duration
+      average_latency_s       — mean per-row latency
+      median_latency_s        — median per-row latency
+      p95_latency_s           — 95th-percentile latency (linear interp)
+      min_latency_s / max_latency_s — extremes
+      total_tokens            — sum of prompt + completion tokens
+      tokens_per_second       — total_tokens / total_runtime_seconds
+      samples_per_minute      — n / total_runtime_seconds × 60
+
+    See METRICS.md §8 for definitions.
+    """
     lat = list(latencies_s)
     n = len(lat)
     out = {

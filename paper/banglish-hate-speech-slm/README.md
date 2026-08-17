@@ -101,6 +101,19 @@ this experiment is `banglish hate speech dataset - Sheet3.csv`
 that Phase 7 will report **distribution-based** metrics rather than
 F1/Accuracy.
 
+## Metrics
+
+See **[METRICS.md](METRICS.md)** for a complete description of every
+column in `predictions.csv` and every field in `run_summary.json`:
+how each metric is measured, its units, its limits, and what the
+failure modes look like. Highlights:
+
+- `latency_seconds` — wall-clock from request to response
+- `prompt_tokens` / `completion_tokens` — **exact** from Ollama, not estimated
+- `peak_vram_mib` — coarse nvidia-smi snapshot
+- `gpu_avg_W` — mean board power per inference window
+- `estimated_energy_Wh` and `estimated_co2_g` — derived estimates, clearly labelled
+
 ## Security note
 
 The reference notebook `gpt_4o.ipynb` (at the repo root) contains an
