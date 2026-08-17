@@ -69,10 +69,10 @@ configurable carbon intensity (default: IEA 2023 global average).
 
 | Model | `think` | num_predict | Behaviour |
 |-------|---------|-------------|-----------|
-| qwen3_4b | true | 2048 | emits ~1000 thinking tokens, then a parseable label. Latency ~70 s/row. |
-| qwen3_1_7b | true | 2048 | emits ~500 thinking tokens, sometimes literal `<Chosen Label>` (parser recovers). Latency ~3 s/row. |
-| gemma3_4b | n/a | 2048 | direct answer. Latency ~100 s/row (long warm-up per first call). |
-| llama3_2_3b | n/a | 2048 | built-in safety refusal on the original prompt. Recorded as `invalid_label`. Latency ~16 s/row. |
+| qwen3_4b | true | 4096 | emits ~1500-2500 thinking tokens, sometimes literal `<Chosen Label>` (parser recovers). Latency ~70 s/row steady-state; ~5h total for 312 rows. ~65% parseable. |
+| qwen3_1_7b | true | 2048 | emits ~500 thinking tokens, sometimes literal `<Chosen Label>` (parser recovers). Latency ~3 s/row. ~96% parseable. |
+| gemma3_4b | n/a | 2048 | direct answer. Latency ~2.5 s/row after ~25-row warm-up. ~98% parseable. |
+| llama3_2_3b | n/a | 2048 | built-in safety refusal on the original prompt (73 % of rows). Recorded as `invalid_label`. Latency ~0.3 s/row. ~23% parseable. |
 
 ## Phases
 
@@ -84,7 +84,7 @@ report before proceeding.
 - **Phase 2** — Ollama connection (complete)
 - **Phase 3** — single-sample test (complete)
 - **Phase 4** — small batch + resume test (complete)
-- **Phase 5** — full experiment per model
+- **Phase 5** — full experiment per model (complete)
 - **Phase 6** — validation report
 - **Phase 7** — evaluation (no ground-truth → distribution + invalid/failure)
 - **Phase 8** — model comparison table
