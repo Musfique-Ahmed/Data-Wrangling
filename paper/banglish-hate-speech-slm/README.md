@@ -87,7 +87,7 @@ report before proceeding.
 - **Phase 5** — full experiment per model (complete)
 - **Phase 6** — validation report (complete)
 - **Phase 7** — evaluation: distribution, Cohen's κ, χ² (complete)
-- **Phase 8** — model comparison table
+- **Phase 8** — model comparison table (complete)
 - **Phase 9** — Banglish-aware prompt experiment
 - **Phase 10** — final report
 
