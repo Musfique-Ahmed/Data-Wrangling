@@ -104,9 +104,10 @@ def run(options: RunOptions) -> RunSummary:
         )
 
     prompt_text = _prompt_text(cfg, options.prompt_version)
+    per_model = (gen.get("per_model_options") or {}).get(options.model_key, {})
     options_block = {
         "temperature": gen["temperature"],
-        "num_predict": gen["num_predict"],
+        "num_predict": per_model.get("num_predict", gen["num_predict"]),
         "num_ctx": gen["num_ctx"],
         "seed": gen["seed"],
         "top_p": gen["top_p"],
@@ -114,7 +115,6 @@ def run(options: RunOptions) -> RunSummary:
     }
     if gen.get("stop"):
         options_block["stop"] = gen["stop"]
-    per_model = (gen.get("per_model_options") or {}).get(options.model_key, {})
     think_value = per_model.get("think", None)
 
     df = load_dataset(cfg["dataset"]["path"])

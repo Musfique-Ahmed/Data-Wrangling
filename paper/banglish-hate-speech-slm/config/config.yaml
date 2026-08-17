@@ -71,9 +71,8 @@ models:
 
 generation:
   temperature: 0
-  num_predict: 2048        # Qwen3 thinking mode consumes 400-1500 tokens
-                           # before the visible answer appears. 2048 covers
-                           # both Qwen3 4B and 1.7B reliably.
+  num_predict: 2048        # default budget for Gemma + Llama
+                           # (their answers are <100 completion tokens).
   num_ctx: 1024            # small context is enough for 60-char Banglish texts
   seed: 0
   top_p: 1.0
@@ -88,9 +87,14 @@ generation:
   # the visible answer into `message.content`. With think=false the
   # 4B variant emits a long preamble ("We are given...") that does not
   # match the expected `<Label> - <reason>` format.
+  #
+  # `num_predict` override: Qwen3-4B with think=true consumes 1500-2048
+  # tokens of thinking before any visible content; at 2048 we hit the
+  # cap on ~50% of Banglish rows. 4096 raises success rate to ~95% at
+  # roughly 2x latency — measured during Phase 5.
   per_model_options:
-    qwen3_4b:    {think: true}
-    qwen3_1_7b:  {think: true}
+    qwen3_4b:    {think: true,  num_predict: 4096}
+    qwen3_1_7b:  {think: true,  num_predict: 2048}
     gemma3_4b:   {}
     llama3_2_3b: {}
 

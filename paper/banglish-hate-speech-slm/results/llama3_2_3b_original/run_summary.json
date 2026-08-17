@@ -6,41 +6,41 @@
   "experiment": "original",
   "dataset_path": "data/data_130.csv",
   "n_rows_total": 312,
-  "n_attempted": 3,
-  "successful_samples": 1,
-  "failed_samples": 2,
-  "invalid_predictions": 2,
-  "total_prompt_tokens": 359,
-  "total_completion_tokens": 60,
-  "total_tokens": 419,
+  "n_attempted": 311,
+  "successful_samples": 73,
+  "failed_samples": 238,
+  "invalid_predictions": 238,
+  "total_prompt_tokens": 39270,
+  "total_completion_tokens": 7943,
+  "total_tokens": 47213,
   "latency": {
-    "n": 3,
-    "total_runtime_seconds": 30.27984600001946,
-    "average_latency_s": 10.040783433340644,
-    "median_latency_s": 6.513733600004343,
-    "p95_latency_s": 16.078186239994828,
-    "min_latency_s": 6.4677135000238195,
-    "max_latency_s": 17.140903199993772,
-    "total_tokens": 419,
-    "tokens_per_second": 13.83758688864305,
-    "samples_per_minute": 5.944548066720165
+    "n": 311,
+    "total_runtime_seconds": 180.72976769998786,
+    "average_latency_s": 0.5379489553063641,
+    "median_latency_s": 0.28915349999442697,
+    "p95_latency_s": 1.7504088999994565,
+    "min_latency_s": 0.20581569999922067,
+    "max_latency_s": 16.579800599982264,
+    "total_tokens": 47213,
+    "tokens_per_second": 261.235327200629,
+    "samples_per_minute": 103.2480716235727
   },
   "gpu": {
-    "peak_vram_mib": 4253
+    "peak_vram_mib": 4190
   },
   "energy": {
-    "estimated_energy_Wh": 0.6693855622227096,
+    "estimated_energy_Wh": 3.717825002228427,
     "power_source": "fallback"
   },
   "co2": {
-    "estimated_co2_g": 0.31795814205578704,
+    "estimated_co2_g": 1.765966876058503,
     "carbon_intensity_gCO2_per_kWh": 475,
     "carbon_intensity_source": "IEA 2023 global average (configurable)"
   },
   "carbon_intensity_gCO2_per_kWh": 475,
   "carbon_intensity_source": "IEA 2023 global average (configurable)",
   "power_source": "fallback",
-  "api_cloud_co2_reference_only_g": 6.59e-05,
-  "started_at": "2026-08-17T07:52:41Z",
-  "finished_at": "2026-08-17T07:53:12Z"
+  "api_cloud_co2_reference_only_g": 0.007898500000000001,
+  "started_at": "2026-08-17T19:31:44Z",
+  "finished_at": "2026-08-17T19:34:44Z"
 }

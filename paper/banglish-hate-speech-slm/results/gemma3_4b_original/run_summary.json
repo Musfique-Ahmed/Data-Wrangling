@@ -6,41 +6,41 @@
   "experiment": "original",
   "dataset_path": "data/data_130.csv",
   "n_rows_total": 312,
-  "n_attempted": 0,
-  "successful_samples": 0,
-  "failed_samples": 0,
-  "invalid_predictions": 0,
-  "total_prompt_tokens": 0,
-  "total_completion_tokens": 0,
-  "total_tokens": 0,
+  "n_attempted": 307,
+  "successful_samples": 306,
+  "failed_samples": 1,
+  "invalid_predictions": 1,
+  "total_prompt_tokens": 34494,
+  "total_completion_tokens": 14057,
+  "total_tokens": 48551,
   "latency": {
-    "n": 0,
-    "total_runtime_seconds": 0.00018350000027567148,
-    "average_latency_s": 0.0,
-    "median_latency_s": 0.0,
-    "p95_latency_s": 0.0,
-    "min_latency_s": 0.0,
-    "max_latency_s": 0.0,
-    "total_tokens": 0,
-    "tokens_per_second": 0.0,
-    "samples_per_minute": 0.0
+    "n": 307,
+    "total_runtime_seconds": 4008.6216757000075,
+    "average_latency_s": 12.983481013680603,
+    "median_latency_s": 2.5254413000075147,
+    "p95_latency_s": 98.96326668000547,
+    "min_latency_s": 2.305614599987166,
+    "max_latency_s": 109.53595950000454,
+    "total_tokens": 48551,
+    "tokens_per_second": 12.111644332592638,
+    "samples_per_minute": 4.595095643886972
   },
   "gpu": {
-    "peak_vram_mib": 1826
+    "peak_vram_mib": 1360
   },
   "energy": {
-    "estimated_energy_Wh": 0.0,
-    "power_source": "unavailable"
+    "estimated_energy_Wh": 88.5761926933321,
+    "power_source": "fallback"
   },
   "co2": {
-    "estimated_co2_g": 0.0,
+    "estimated_co2_g": 42.07369152933275,
     "carbon_intensity_gCO2_per_kWh": 475,
     "carbon_intensity_source": "IEA 2023 global average (configurable)"
   },
   "carbon_intensity_gCO2_per_kWh": 475,
   "carbon_intensity_source": "IEA 2023 global average (configurable)",
-  "power_source": "unavailable",
-  "api_cloud_co2_reference_only_g": 0.0,
-  "started_at": "2026-08-17T07:52:13Z",
-  "finished_at": "2026-08-17T07:52:13Z"
+  "power_source": "fallback",
+  "api_cloud_co2_reference_only_g": 0.0104779,
+  "started_at": "2026-08-17T12:28:17Z",
+  "finished_at": "2026-08-17T13:35:06Z"
 }
