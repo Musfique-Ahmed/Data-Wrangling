@@ -1,0 +1,319 @@
+{
+  "per_model": [
+    {
+      "model": "qwen3_4b",
+      "path": "F:\\Git Repo\\Data-Wrangling\\paper\\banglish-hate-speech-slm\\results\\qwen3_4b_original\\predictions.csv",
+      "checks": [
+        {
+          "name": "schema_columns",
+          "status": "ok",
+          "detail": "exact match"
+        },
+        {
+          "name": "row_count",
+          "status": "ok",
+          "detail": "312 rows"
+        },
+        {
+          "name": "unique_ids",
+          "status": "ok",
+          "detail": "312 unique ids"
+        },
+        {
+          "name": "latency_nonneg",
+          "status": "ok",
+          "detail": "all rows >= 0"
+        },
+        {
+          "name": "tokens_nonneg",
+          "status": "ok",
+          "detail": "all rows >= 0"
+        },
+        {
+          "name": "total_eq_pt_plus_ct",
+          "status": "ok",
+          "detail": "all rows consistent"
+        },
+        {
+          "name": "parse_status_enum",
+          "status": "ok",
+          "detail": "distribution={'ok': 203, 'invalid_label': 82, 'empty': 27}"
+        },
+        {
+          "name": "experiment_field",
+          "status": "ok",
+          "detail": "distinct values = {'original'}"
+        },
+        {
+          "name": "model_field",
+          "status": "ok",
+          "detail": "distinct values = {'Qwen3-4B'} (expected {'Qwen3-4B'})"
+        },
+        {
+          "name": "canonical_labels",
+          "status": "ok",
+          "detail": "all ok rows use canonical labels"
+        }
+      ],
+      "row_count": 312,
+      "ok_label_distribution": {
+        "Not Hate Speech": 166,
+        "Personal / Social Abuse": 11,
+        "Racism": 3,
+        "Religious Hate": 7,
+        "Geopolitical Hate": 14,
+        "Political Hate": 1,
+        "Gender Abuse": 1
+      },
+      "parse_status_distribution": {
+        "ok": 203,
+        "invalid_label": 82,
+        "empty": 27
+      },
+      "latency_stats": {
+        "n": 312,
+        "min": 9.472,
+        "max": 106.8586,
+        "mean": 60.49051698717949,
+        "median": 72.6804,
+        "p95": 91.04875
+      },
+      "all_passed": true
+    },
+    {
+      "model": "gemma3_4b",
+      "path": "F:\\Git Repo\\Data-Wrangling\\paper\\banglish-hate-speech-slm\\results\\gemma3_4b_original\\predictions.csv",
+      "checks": [
+        {
+          "name": "schema_columns",
+          "status": "ok",
+          "detail": "exact match"
+        },
+        {
+          "name": "row_count",
+          "status": "ok",
+          "detail": "312 rows"
+        },
+        {
+          "name": "unique_ids",
+          "status": "ok",
+          "detail": "312 unique ids"
+        },
+        {
+          "name": "latency_nonneg",
+          "status": "ok",
+          "detail": "all rows >= 0"
+        },
+        {
+          "name": "tokens_nonneg",
+          "status": "ok",
+          "detail": "all rows >= 0"
+        },
+        {
+          "name": "total_eq_pt_plus_ct",
+          "status": "ok",
+          "detail": "all rows consistent"
+        },
+        {
+          "name": "parse_status_enum",
+          "status": "ok",
+          "detail": "distribution={'ok': 311, 'invalid_label': 1}"
+        },
+        {
+          "name": "experiment_field",
+          "status": "ok",
+          "detail": "distinct values = {'original'}"
+        },
+        {
+          "name": "model_field",
+          "status": "ok",
+          "detail": "distinct values = {'Gemma 3 4B Instruct'} (expected {'Gemma 3 4B Instruct'})"
+        },
+        {
+          "name": "canonical_labels",
+          "status": "ok",
+          "detail": "all ok rows use canonical labels"
+        }
+      ],
+      "row_count": 312,
+      "ok_label_distribution": {
+        "Racism": 235,
+        "Personal / Social Abuse": 30,
+        "Not Hate Speech": 34,
+        "Political Hate": 6,
+        "Religious Hate": 6
+      },
+      "parse_status_distribution": {
+        "ok": 311,
+        "invalid_label": 1
+      },
+      "latency_stats": {
+        "n": 312,
+        "min": 2.3056,
+        "max": 109.536,
+        "mean": 14.351206730769231,
+        "median": 2.5299,
+        "p95": 99.069875
+      },
+      "all_passed": true
+    },
+    {
+      "model": "qwen3_1_7b",
+      "path": "F:\\Git Repo\\Data-Wrangling\\paper\\banglish-hate-speech-slm\\results\\qwen3_1_7b_original\\predictions.csv",
+      "checks": [
+        {
+          "name": "schema_columns",
+          "status": "ok",
+          "detail": "exact match"
+        },
+        {
+          "name": "row_count",
+          "status": "ok",
+          "detail": "312 rows"
+        },
+        {
+          "name": "unique_ids",
+          "status": "ok",
+          "detail": "312 unique ids"
+        },
+        {
+          "name": "latency_nonneg",
+          "status": "ok",
+          "detail": "all rows >= 0"
+        },
+        {
+          "name": "tokens_nonneg",
+          "status": "ok",
+          "detail": "all rows >= 0"
+        },
+        {
+          "name": "total_eq_pt_plus_ct",
+          "status": "ok",
+          "detail": "all rows consistent"
+        },
+        {
+          "name": "parse_status_enum",
+          "status": "ok",
+          "detail": "distribution={'ok': 311, 'invalid_label': 1}"
+        },
+        {
+          "name": "experiment_field",
+          "status": "ok",
+          "detail": "distinct values = {'original'}"
+        },
+        {
+          "name": "model_field",
+          "status": "ok",
+          "detail": "distinct values = {'Qwen3-1.7B'} (expected {'Qwen3-1.7B'})"
+        },
+        {
+          "name": "canonical_labels",
+          "status": "ok",
+          "detail": "all ok rows use canonical labels"
+        }
+      ],
+      "row_count": 312,
+      "ok_label_distribution": {
+        "Not Hate Speech": 204,
+        "Gender Abuse": 9,
+        "Religious Hate": 15,
+        "Personal / Social Abuse": 63,
+        "Political Hate": 12,
+        "Racism": 8
+      },
+      "parse_status_distribution": {
+        "ok": 311,
+        "invalid_label": 1
+      },
+      "latency_stats": {
+        "n": 312,
+        "min": 2.0663,
+        "max": 30.7925,
+        "mean": 3.3128794871794875,
+        "median": 3.1179,
+        "p95": 4.509615
+      },
+      "all_passed": true
+    },
+    {
+      "model": "llama3_2_3b",
+      "path": "F:\\Git Repo\\Data-Wrangling\\paper\\banglish-hate-speech-slm\\results\\llama3_2_3b_original\\predictions.csv",
+      "checks": [
+        {
+          "name": "schema_columns",
+          "status": "ok",
+          "detail": "exact match"
+        },
+        {
+          "name": "row_count",
+          "status": "ok",
+          "detail": "312 rows"
+        },
+        {
+          "name": "unique_ids",
+          "status": "ok",
+          "detail": "312 unique ids"
+        },
+        {
+          "name": "latency_nonneg",
+          "status": "ok",
+          "detail": "all rows >= 0"
+        },
+        {
+          "name": "tokens_nonneg",
+          "status": "ok",
+          "detail": "all rows >= 0"
+        },
+        {
+          "name": "total_eq_pt_plus_ct",
+          "status": "ok",
+          "detail": "all rows consistent"
+        },
+        {
+          "name": "parse_status_enum",
+          "status": "ok",
+          "detail": "distribution={'invalid_label': 238, 'ok': 74}"
+        },
+        {
+          "name": "experiment_field",
+          "status": "ok",
+          "detail": "distinct values = {'original'}"
+        },
+        {
+          "name": "model_field",
+          "status": "ok",
+          "detail": "distinct values = {'Llama 3.2 3B Instruct'} (expected {'Llama 3.2 3B Instruct'})"
+        },
+        {
+          "name": "canonical_labels",
+          "status": "ok",
+          "detail": "all ok rows use canonical labels"
+        }
+      ],
+      "row_count": 312,
+      "ok_label_distribution": {
+        "Not Hate Speech": 72,
+        "Racism": 2
+      },
+      "parse_status_distribution": {
+        "invalid_label": 238,
+        "ok": 74
+      },
+      "latency_stats": {
+        "n": 312,
+        "min": 0.2058,
+        "max": 16.5798,
+        "mean": 0.5571022435897436,
+        "median": 0.2893,
+        "p95": 1.7600149999999997
+      },
+      "all_passed": true
+    }
+  ],
+  "cross_model": {
+    "name": "cross_model_text_consistency",
+    "status": "ok",
+    "detail": "texts identical across 4 models"
+  },
+  "overall_pass": true
+}
