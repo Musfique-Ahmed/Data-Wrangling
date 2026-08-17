@@ -82,8 +82,8 @@ report before proceeding.
 - **Phase 0** — environment inspection (complete)
 - **Phase 1** — project scaffold (complete)
 - **Phase 2** — Ollama connection (complete)
-- **Phase 3** — single-sample test (in progress)
-- **Phase 4** — small batch + resume test
+- **Phase 3** — single-sample test (complete)
+- **Phase 4** — small batch + resume test (complete)
 - **Phase 5** — full experiment per model
 - **Phase 6** — validation report
 - **Phase 7** — evaluation (no ground-truth → distribution + invalid/failure)
