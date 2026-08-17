@@ -83,12 +83,13 @@ def parse_response(raw: str) -> ParsedResponse:
 
     label_str = label_str.strip().strip('"').strip("'").strip("`")
     reason = reason.strip().strip('"').strip("'").strip("`")
-    # Drop leading bullets / numbering from the label.
+    # Drop leading bullets / numbering / Markdown bold from the label.
     label_str = re.sub(r"^[\s\-\*\d\.\(\)]+", "", label_str)
+    label_str = re.sub(r"\*\*\s*|\s*\*\*", "", label_str)  # strip **Markdown** wrappers
 
     canon = normalise_label(label_str)
 
-    # Recovery path: model emitted the literal placeholder.
+    # Recovery path A: model emitted the literal placeholder.
     if canon is None and re.search(r"<\s*Chosen\s*Label\s*>", label_str, re.IGNORECASE):
         full_lower = text.lower()
         from .utils import _LABEL_TOKEN_MAP
@@ -100,6 +101,31 @@ def parse_response(raw: str) -> ParsedResponse:
                 else:
                     reason_full = text
                 reason = re.split(r"\n\s*\n", reason_full.strip(), maxsplit=1)[0].strip()
+                break
+
+    # Recovery path B: model gave a Markdown conclusion like
+    #   **Conclusion**: This text is classified as **Not Hate Speech**.
+    # Find the first canonical label that follows a colon/bold/etc.
+    if canon is None:
+        from .utils import _LABEL_TOKEN_MAP
+        # Try every canonical label in order of decreasing length, case-insensitive.
+        candidates_sorted = sorted(_LABEL_TOKEN_MAP.items(), key=lambda kv: -len(kv[0]))
+        for key, c in candidates_sorted:
+            # Look for the label as a standalone token (surrounded by non-word chars).
+            pat = r"(?:^|[\s\*\-\:\.\(\)\,\;])" + re.escape(key) + r"(?:$|[\s\*\-\:\.\(\)\,\;\.]+)"
+            if re.search(pat, text, re.IGNORECASE):
+                canon = c
+                # Use the sentence that contains the match as reasoning.
+                m = re.search(pat, text, re.IGNORECASE)
+                if m:
+                    # Take the paragraph containing this match.
+                    paragraphs = re.split(r"\n\s*\n", text)
+                    for para in paragraphs:
+                        if re.search(pat, para, re.IGNORECASE):
+                            reason = para.strip()[:300]
+                            break
+                else:
+                    reason = ""
                 break
 
     if canon is None:
