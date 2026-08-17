@@ -1,0 +1,132 @@
+# ============================================================
+# Banglish Hate-Speech SLM Replication — central configuration
+# ============================================================
+#
+# Everything that controls the experiment lives here. Source files
+# (data, prompts) are read-only. Outputs go to results/ and logs/.
+#
+# Hardware assumption: NVIDIA RTX 5060, 8 GB VRAM, 16 GB system RAM.
+# We load one SLM at a time and explicitly unload via keep_alive="0s".
+# ------------------------------------------------------------
+
+experiment:
+  # The seven canonical labels (verbatim from the reference notebook).
+  # The parser normalises any text containing one of these tokens
+  # (case-insensitive, slash-insensitive, whitespace-trimmed) to the
+  # canonical form.
+  labels:
+    - "Not Hate Speech"
+    - "Religious Hate"
+    - "Political Hate"
+    - "Personal / Social Abuse"
+    - "Gender Abuse"
+    - "Racism"
+    - "Geopolitical Hate"
+
+  # Prompt files (under prompts/).
+  prompt_files:
+    original: "prompts/original_zero_shot.txt"
+    banglish_aware: "prompts/banglish_aware_zero_shot.txt"
+
+  # Single-sample test sentence (also used in the reference notebook).
+  single_sample_text: "awamiligara ture pun marche?"
+
+dataset:
+  # The dataset we will use. The original reference notebook reads
+  # `data_130.csv`. In this repo the supplied file is the 312-row
+  # Banglish hate-speech CSV with a `Sentences` column. We treat
+  # `Sentences` as the source text column (mapped to `Text` in the
+  # loader) and DO NOT modify the source file.
+  path: "data/data_130.csv"
+  source_csv: "banglish hate speech dataset - Sheet3.csv"
+  text_column: "Sentences"   # renamed to `Text` in-memory
+
+models:
+  qwen3_4b:
+    ollama_model: "qwen3:4b"
+    display_name: "Qwen3-4B"
+    parameters_b: 4
+    quant: "Q4_K_M"
+
+  gemma3_4b:
+    ollama_model: "gemma3:4b"
+    display_name: "Gemma 3 4B Instruct"
+    parameters_b: 4
+    quant: "Q4_K_M"
+
+  qwen3_1_7b:
+    ollama_model: "qwen3:1.7b"
+    display_name: "Qwen3-1.7B"
+    parameters_b: 1.7
+    quant: "Q4_K_M"
+
+  llama3_2_3b:
+    ollama_model: "llama3.2:3b"
+    display_name: "Llama 3.2 3B Instruct"
+    parameters_b: 3.2
+    quant: "Q4_K_M"
+    # NOTE: `llama3.2:3b-instruct` does NOT exist in the Ollama registry.
+    # The default `llama3.2:3b` tag is the Meta-released instruction-tuned
+    # chat model (3.2B params, Q4_K_M).
+
+generation:
+  temperature: 0
+  num_predict: 2048        # Qwen3 thinking mode consumes 400-1500 tokens
+                           # before the visible answer appears. 2048 covers
+                           # both Qwen3 4B and 1.7B reliably.
+  num_ctx: 1024            # small context is enough for 60-char Banglish texts
+  seed: 0
+  top_p: 1.0
+  top_k: 1
+  stop: []
+  keep_alive: "0s"         # unload immediately after each request
+                           # (Ollama defaults to "5m")
+
+  # Per-model Ollama request overrides.
+  # Qwen3 with think=true produces a separate `thinking` block that
+  # Ollama surfaces via `message.thinking`; the chat template extracts
+  # the visible answer into `message.content`. With think=false the
+  # 4B variant emits a long preamble ("We are given...") that does not
+  # match the expected `<Label> - <reason>` format.
+  per_model_options:
+    qwen3_4b:    {think: true}
+    qwen3_1_7b:  {think: true}
+    gemma3_4b:   {}
+    llama3_2_3b: {}
+
+ollama:
+  base_url: "http://127.0.0.1:11434"
+  request_timeout_s: 120
+  retries: 3
+  backoff_initial_s: 2
+  backoff_max_s: 30
+
+runtime:
+  inter_request_sleep_s: 0.0   # reference notebook uses 10 s; we set 0 locally
+
+monitoring:
+  poll_nvidia_smi: true
+  poll_interval_s: 1.0
+  sample_vram_each_request: true
+
+energy:
+  # Local GPU power (W) is sampled via nvidia-smi. If unavailable we
+  # fall back to a configurable TDP estimate. Both are *estimates* and
+  # labelled as such in run_summary.json.
+  fallback_gpu_power_w: 80            # RTX 5060 typical under SLM load
+  carbon_intensity_gCO2_per_kWh: 475  # IEA 2023 global average (configurable)
+  carbon_intensity_source: "IEA 2023 global average (configurable)"
+
+paths:
+  results_dir: "results"
+  logs_dir: "logs"
+  reports_dir: "reports"
+  notebook_path: "notebooks/slm_experiment.ipynb"
+
+# The reference notebook's API-cloud CO2 factors are preserved here
+# for comparability only. They are NOT used in the local pipeline;
+# the local pipeline uses energy.{fallback_gpu_power_w, carbon_intensity_*}.
+api_cloud_co2_factors_for_reference_only:
+  prompt_per_1k_tokens_g: 0.0001
+  completion_per_1k_tokens_g: 0.0005
+  source: "Reference notebook gpt_4o.ipynb cell 16"

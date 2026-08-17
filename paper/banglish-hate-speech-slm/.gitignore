@@ -1,0 +1,12 @@
+# --- Per-model inference outputs (regenerated on each run) ---
+results/*/predictions.csv
+results/all_models_*.json
+logs/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env

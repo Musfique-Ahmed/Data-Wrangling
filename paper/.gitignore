@@ -1,0 +1,38 @@
+# --- Reference notebook (contains an OpenAI API key in cell 6) ---
+# Local copy stays in the repo for reproducibility; tracked copy excluded
+# from git because GitHub push protection would block any push that
+# contains that secret. The notebook is consulted by Phase 0 only.
+gpt_4o.ipynb
+
+# --- Puku harness state (not source code) ---
+.puku/
+*.db
+*.db-shm
+*.db-wal
+
+# --- Python build artefacts ---
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# --- IDE / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Notebook checkpoints ---
+.ipynb_checkpoints/
+
+# --- Secrets / credentials ---
+.env
+.env.*
+api_keys.txt
+
+# --- Per-model inference outputs (regenerated on each run) ---
+banglish-hate-speech-slm/results/*/predictions.csv
+banglish-hate-speech-slm/results/all_models_*.json
+banglish-hate-speech-slm/logs/
