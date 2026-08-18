@@ -2,6 +2,7 @@
 results/*/predictions.csv
 results/all_models_*.json
 logs/
+logs_phase*.log
 
 # --- Python ---
 __pycache__/
