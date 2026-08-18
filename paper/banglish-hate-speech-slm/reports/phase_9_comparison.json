@@ -1,0 +1,279 @@
+{
+  "per_model": {
+    "qwen3_4b": {
+      "original": {
+        "prompt": "original",
+        "n_total": 312,
+        "n_ok": 203,
+        "ok_pct": 65.06,
+        "n_invalid_label": 82,
+        "invalid_label_pct": 26.28,
+        "n_empty": 27,
+        "empty_pct": 8.65,
+        "wall_clock_s": 18897.7,
+        "median_latency_s": 72.546,
+        "p95_latency_s": 91.049,
+        "total_tokens": 681476,
+        "energy_Wh": 419.4,
+        "co2_g": 199.22,
+        "label_distribution_ok": {
+          "Not Hate Speech": 166,
+          "Personal / Social Abuse": 11,
+          "Racism": 3,
+          "Religious Hate": 7,
+          "Geopolitical Hate": 14,
+          "Political Hate": 1,
+          "Gender Abuse": 1
+        },
+        "racism_count_ok": 3,
+        "racism_pct_ok": 1.48
+      },
+      "banglish_aware": {
+        "prompt": "banglish_aware",
+        "n_total": 312,
+        "n_ok": 102,
+        "ok_pct": 32.69,
+        "n_invalid_label": 163,
+        "invalid_label_pct": 52.24,
+        "n_empty": 47,
+        "empty_pct": 15.06,
+        "wall_clock_s": 12938.5,
+        "median_latency_s": 33.315,
+        "p95_latency_s": 83.368,
+        "total_tokens": 900746,
+        "energy_Wh": 287.0,
+        "co2_g": 136.33,
+        "label_distribution_ok": {
+          "Geopolitical Hate": 3,
+          "Not Hate Speech": 85,
+          "Religious Hate": 2,
+          "Racism": 3,
+          "Personal / Social Abuse": 7,
+          "Political Hate": 2
+        },
+        "racism_count_ok": 3,
+        "racism_pct_ok": 2.94
+      },
+      "deltas": {
+        "ok_pct": -32.37,
+        "invalid_label_pct": 25.96,
+        "empty_pct": 6.41,
+        "median_latency_s": -39.23,
+        "energy_Wh": -132.4,
+        "co2_g": -62.89,
+        "racism_pct_ok": 1.46,
+        "delta_n_ok": -101,
+        "delta_wall_clock_s": -5959.2,
+        "orig_empty_pct": 8.65,
+        "ba_empty_pct": 15.06
+      },
+      "verdict": {
+        "H3_thinking_unchanged": "PASS",
+        "H3_detail": "empty pct: +6.4 pts (orig=8.65%)"
+      }
+    },
+    "gemma3_4b": {
+      "original": {
+        "prompt": "original",
+        "n_total": 312,
+        "n_ok": 311,
+        "ok_pct": 99.68,
+        "n_invalid_label": 1,
+        "invalid_label_pct": 0.32,
+        "n_empty": 0,
+        "empty_pct": 0.0,
+        "wall_clock_s": 4008.6,
+        "median_latency_s": 2.525,
+        "p95_latency_s": 98.963,
+        "total_tokens": 48551,
+        "energy_Wh": 88.58,
+        "co2_g": 42.07,
+        "label_distribution_ok": {
+          "Racism": 235,
+          "Personal / Social Abuse": 30,
+          "Not Hate Speech": 34,
+          "Political Hate": 6,
+          "Religious Hate": 6
+        },
+        "racism_count_ok": 235,
+        "racism_pct_ok": 75.56
+      },
+      "banglish_aware": {
+        "prompt": "banglish_aware",
+        "n_total": 312,
+        "n_ok": 312,
+        "ok_pct": 100.0,
+        "n_invalid_label": 0,
+        "invalid_label_pct": 0.0,
+        "n_empty": 0,
+        "empty_pct": 0.0,
+        "wall_clock_s": 3307.9,
+        "median_latency_s": 2.475,
+        "p95_latency_s": 97.687,
+        "total_tokens": 60593,
+        "energy_Wh": 72.97,
+        "co2_g": 34.66,
+        "label_distribution_ok": {
+          "Political Hate": 65,
+          "Religious Hate": 43,
+          "Racism": 88,
+          "Personal / Social Abuse": 66,
+          "Not Hate Speech": 49,
+          "Gender Abuse": 1
+        },
+        "racism_count_ok": 88,
+        "racism_pct_ok": 28.21
+      },
+      "deltas": {
+        "ok_pct": 0.32,
+        "invalid_label_pct": -0.32,
+        "empty_pct": 0.0,
+        "median_latency_s": -0.05,
+        "energy_Wh": -15.61,
+        "co2_g": -7.41,
+        "racism_pct_ok": -47.35,
+        "delta_n_ok": 1,
+        "delta_wall_clock_s": -700.7,
+        "orig_empty_pct": 0.0,
+        "ba_empty_pct": 0.0
+      },
+      "verdict": {
+        "H1_racism_drop": "PASS",
+        "H1_detail": "Racism pct: -47.4 pts"
+      }
+    },
+    "qwen3_1_7b": {
+      "original": {
+        "prompt": "original",
+        "n_total": 312,
+        "n_ok": 311,
+        "ok_pct": 99.68,
+        "n_invalid_label": 1,
+        "invalid_label_pct": 0.32,
+        "n_empty": 0,
+        "empty_pct": 0.0,
+        "wall_clock_s": 1009.5,
+        "median_latency_s": 3.1,
+        "p95_latency_s": 4.459,
+        "total_tokens": 179880,
+        "energy_Wh": 22.04,
+        "co2_g": 10.47,
+        "label_distribution_ok": {
+          "Not Hate Speech": 204,
+          "Gender Abuse": 9,
+          "Religious Hate": 15,
+          "Personal / Social Abuse": 63,
+          "Political Hate": 12,
+          "Racism": 8
+        },
+        "racism_count_ok": 8,
+        "racism_pct_ok": 2.57
+      },
+      "banglish_aware": {
+        "prompt": "banglish_aware",
+        "n_total": 312,
+        "n_ok": 279,
+        "ok_pct": 89.42,
+        "n_invalid_label": 33,
+        "invalid_label_pct": 10.58,
+        "n_empty": 0,
+        "empty_pct": 0.0,
+        "wall_clock_s": 1604.2,
+        "median_latency_s": 3.012,
+        "p95_latency_s": 30.348,
+        "total_tokens": 189848,
+        "energy_Wh": 35.18,
+        "co2_g": 16.71,
+        "label_distribution_ok": {
+          "Not Hate Speech": 173,
+          "Political Hate": 14,
+          "Geopolitical Hate": 1,
+          "Personal / Social Abuse": 58,
+          "Religious Hate": 15,
+          "Racism": 8,
+          "Gender Abuse": 10
+        },
+        "racism_count_ok": 8,
+        "racism_pct_ok": 2.87
+      },
+      "deltas": {
+        "ok_pct": -10.26,
+        "invalid_label_pct": 10.26,
+        "empty_pct": 0.0,
+        "median_latency_s": -0.09,
+        "energy_Wh": 13.14,
+        "co2_g": 6.24,
+        "racism_pct_ok": 0.3,
+        "delta_n_ok": -32,
+        "delta_wall_clock_s": 594.7,
+        "orig_empty_pct": 0.0,
+        "ba_empty_pct": 0.0
+      },
+      "verdict": {}
+    },
+    "llama3_2_3b": {
+      "original": {
+        "prompt": "original",
+        "n_total": 312,
+        "n_ok": 74,
+        "ok_pct": 23.72,
+        "n_invalid_label": 238,
+        "invalid_label_pct": 76.28,
+        "n_empty": 0,
+        "empty_pct": 0.0,
+        "wall_clock_s": 180.7,
+        "median_latency_s": 0.289,
+        "p95_latency_s": 1.75,
+        "total_tokens": 47213,
+        "energy_Wh": 3.72,
+        "co2_g": 1.77,
+        "label_distribution_ok": {
+          "Not Hate Speech": 72,
+          "Racism": 2
+        },
+        "racism_count_ok": 2,
+        "racism_pct_ok": 2.7
+      },
+      "banglish_aware": {
+        "prompt": "banglish_aware",
+        "n_total": 312,
+        "n_ok": 308,
+        "ok_pct": 98.72,
+        "n_invalid_label": 4,
+        "invalid_label_pct": 1.28,
+        "n_empty": 0,
+        "empty_pct": 0.0,
+        "wall_clock_s": 1443.1,
+        "median_latency_s": 3.764,
+        "p95_latency_s": 17.467,
+        "total_tokens": 71724,
+        "energy_Wh": 31.35,
+        "co2_g": 14.89,
+        "label_distribution_ok": {
+          "Not Hate Speech": 306,
+          "Personal / Social Abuse": 1,
+          "Racism": 1
+        },
+        "racism_count_ok": 1,
+        "racism_pct_ok": 0.32
+      },
+      "deltas": {
+        "ok_pct": 75.0,
+        "invalid_label_pct": -75.0,
+        "empty_pct": 0.0,
+        "median_latency_s": 3.47,
+        "energy_Wh": 27.63,
+        "co2_g": 13.12,
+        "racism_pct_ok": -2.38,
+        "delta_n_ok": 234,
+        "delta_wall_clock_s": 1262.4,
+        "orig_empty_pct": 0.0,
+        "ba_empty_pct": 0.0
+      },
+      "verdict": {
+        "H2_refusal_drop": "PASS",
+        "H2_detail": "invalid_label pct: -75.0 pts"
+      }
+    }
+  }
+}

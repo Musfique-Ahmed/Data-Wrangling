@@ -88,7 +88,7 @@ report before proceeding.
 - **Phase 6** — validation report (complete)
 - **Phase 7** — evaluation: distribution, Cohen's κ, χ² (complete)
 - **Phase 8** — model comparison table (complete)
-- **Phase 9** — Banglish-aware prompt experiment
+- **Phase 9** — Banglish-aware prompt experiment (complete)
 - **Phase 10** — final report
 
 ## Dataset caveat
